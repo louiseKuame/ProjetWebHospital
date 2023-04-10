@@ -1,0 +1,792 @@
+{
+	"info": {
+		"_postman_id": "cb6a202b-f229-45dd-a558-8180de822139",
+		"name": "Hopital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25689869"
+	},
+	"item": [
+		{
+			"name": "authentification",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Ajouter un user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"philomene\",\r\n    \"prenom\": \"atete\",\r\n    \"user_name\": \"yui\",\r\n    \"password\": \"cite20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/users",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "Ajouter Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\":\"odontologie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/service",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste service",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "mise à jour d'un service",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\":\"odontologie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/service/1",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"service",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un Service",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\":\"odontologie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/service/2",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"service",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "departement",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"chirguie\",\r\n    \"description\":\"opération chirgicale\",\r\n     \"creation_date\":\"2023/10/03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/departments",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste des departements",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"chirguie\",\r\n    \"description\":\"opération chirgicale\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/departements",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"departements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour du departement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"chirguie\",\r\n    \"description\":\"opération chirgicale\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/departements",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"departements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer departement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hopitale}}/departements",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"departements"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Facturation",
+			"item": [
+				{
+					"name": "Ajouter Facturations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom_prestation\": \"Consultation\",\r\n    \"prix\":\"100\",\r\n    \"date\":\"2023/03/23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/facturation",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"facturation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste Facturations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom_prescription\": \"\",\r\n    \"prix\":\"\",\r\n    \"date\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/facturation",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"facturation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour Facturation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom_prescription\": \"\",\r\n    \"prix\":\"\",\r\n    \"date\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/facturation",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"facturation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer Facturation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hopitale}}/facturation",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"facturation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hospitals",
+			"item": [
+				{
+					"name": "Ajouter hospitals",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"MONTFORT HOSPITAL\",\r\n    \"adress\":\"713 Montréal Rd, Ottawa, ON K1K 0T2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/hospitals",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"hospitals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste Hospitals",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"\",\r\n    \"adress\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/hospitals",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"hospitals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour Hospitals",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"\",\r\n    \"adress\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/hospitals",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"hospitals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer Hospital",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hopitale}}/hospitals",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"hospitals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prestations",
+			"item": [
+				{
+					"name": "Ajouter Prestation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom_prestation\": \"Consultation\",\r\n    \"prix\": \"100\",\r\n    \"date\": \"2023/03/23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/prestations",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"prestations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste Prestation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/prestations",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"prestations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour Prestation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/prestations",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"prestations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer Prestation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hopitale}}/prestations",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"prestations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rendez-vous",
+			"item": [
+				{
+					"name": "Ajouter Rendez-vous",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type_rdv\": \"traitement dentaire\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/rendezvous",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"rendezvous"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste Rendez-vous",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type_rdv\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/rendezvous",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"rendezvous"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour rendez-vous",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type_rdv\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/rendezvous",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"rendezvous"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer rendez-vous",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hopitale}}/rendezvous",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"rendezvous"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Ajouter role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"infirmier\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/role",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste des roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/role",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hopitale}}/role",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{hopitale}}/r",
+							"host": [
+								"{{hopitale}}"
+							],
+							"path": [
+								"r"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hopitale",
+			"value": "http://localhost:5002",
+			"type": "string"
+		}
+	]
+}
